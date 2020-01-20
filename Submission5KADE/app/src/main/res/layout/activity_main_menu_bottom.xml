@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.main.MainMenuBottomActivity">
+
+    <FrameLayout
+        android:id="@+id/frame_layout_mainBottom"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_450sdp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/navigationBottomView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.gauravk.bubblenavigation.BubbleNavigationConstraintView
+        android:id="@+id/navigationBottomView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:elevation="@dimen/_4sdp"
+        android:padding="@dimen/_5sdp"
+        app:bnc_mode="spread"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <com.gauravk.bubblenavigation.BubbleToggleView
+            android:id="@+id/c_item_leagues"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:bt_active="true"
+            app:bt_colorActive="@color/blue_active"
+            app:bt_colorInactive="@color/blue_inactive"
+            app:bt_icon="@drawable/ic_cup"
+            app:bt_padding="@dimen/_10sdp"
+            app:bt_shape="@drawable/transition_background_drawable"
+            app:bt_title="@string/league"
+            app:bt_titlePadding="@dimen/title_padding" />
+
+
+        <!--<com.gauravk.bubblenavigation.BubbleToggleView
+            android:id="@+id/c_item_search"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:bt_active="true"
+            app:bt_colorActive="@color/green_active"
+            app:bt_colorInactive="@color/green_inactive"
+            app:bt_icon="@drawable/ic_search_black_24dp"
+            app:bt_padding="@dimen/internal_padding"
+            app:bt_shape="@drawable/transition_background_drawable"
+            app:bt_title="@string/search"
+            app:bt_titlePadding="@dimen/title_padding" />-->
+
+        <com.gauravk.bubblenavigation.BubbleToggleView
+            android:id="@+id/c_item_match"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:bt_active="true"
+            app:bt_colorActive="@color/red_active"
+            app:bt_colorInactive="@color/red_inactive"
+            app:bt_icon="@drawable/ic_football"
+            app:bt_padding="@dimen/_10sdp"
+            app:bt_shape="@drawable/transition_background_drawable"
+            app:bt_title="@string/match"
+            app:bt_titlePadding="@dimen/title_padding" />
+    </com.gauravk.bubblenavigation.BubbleNavigationConstraintView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

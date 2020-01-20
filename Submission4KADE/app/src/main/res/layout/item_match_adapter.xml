@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+
+    <TextView
+        android:id="@+id/tv_date_time_match"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="VS"
+        app:layout_constraintEnd_toEndOf="@+id/tv_date_time_match"
+        app:layout_constraintStart_toStartOf="@+id/tv_date_time_match"
+        app:layout_constraintTop_toBottomOf="@+id/tv_date_time_match" />
+
+    <TextView
+        android:id="@+id/tv_home_score_match"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:text="0"
+        app:layout_constraintBottom_toBottomOf="@+id/textView"
+        app:layout_constraintEnd_toStartOf="@+id/textView"
+        app:layout_constraintTop_toTopOf="@+id/textView"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/tv_away_score_match"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="0"
+        app:layout_constraintBottom_toBottomOf="@+id/textView"
+        app:layout_constraintStart_toEndOf="@+id/textView"
+        app:layout_constraintTop_toTopOf="@+id/textView" />
+
+    <TextView
+        android:id="@+id/tv_home_team_match"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:text="Home Team"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_home_score_match"
+        app:layout_constraintEnd_toStartOf="@+id/tv_home_score_match"
+        app:layout_constraintTop_toTopOf="@+id/tv_home_score_match" />
+
+    <TextView
+        android:id="@+id/tv_away_team_match"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="Away Team"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_away_score_match"
+        app:layout_constraintStart_toEndOf="@+id/tv_away_score_match"
+        app:layout_constraintTop_toTopOf="@+id/tv_away_score_match" />
+</androidx.constraintlayout.widget.ConstraintLayout>
