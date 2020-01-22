@@ -1,11 +1,9 @@
 package inn.mroyek.submission5kade.network
 
 import inn.mroyek.submission5kade.model.pojo.AllTeams
-import inn.mroyek.submission5kade.model.response.DetailLeague
-import inn.mroyek.submission5kade.model.response.MatchModel
-import inn.mroyek.submission5kade.model.response.TeamModel
 import inn.mroyek.submission5kade.model.pojo.Matchs
 import inn.mroyek.submission5kade.model.pojo.Search
+import inn.mroyek.submission5kade.model.response.*
 import io.reactivex.Observable
 import io.reactivex.Single
 
@@ -47,6 +45,16 @@ class ApiRepository {
             }
             .toList()
     }
+    fun getSearchTeam(querys: String?): Single<MutableList<AllTeams>>? {
+        return apiService.getSearchTeams(query = querys)
+            .flatMapIterable {
+                it.teams
+            }
+            .map {
+                it.transformSearhTeam()
+            }
+            .toList()
+    }
 
     fun getDetailLeague(idLeagues: String): Observable<List<DetailLeague?>?>? {
         return apiService.getDetailLeague(id = idLeagues)
@@ -64,4 +72,8 @@ class ApiRepository {
             .toList()
     }
 
+    fun getStandings(idLeagues: String): Observable<List<Table?>?>? {
+        return apiService.getStanding(idLeague = idLeagues )
+            .map { it.table }
+    }
 }

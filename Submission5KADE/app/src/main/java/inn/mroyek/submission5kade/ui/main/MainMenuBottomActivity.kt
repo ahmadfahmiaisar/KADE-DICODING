@@ -6,7 +6,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import inn.mroyek.submission5kade.ui.favorite.FavoriteMatchFragment
-import inn.mroyek.submission5kade.ui.search.SearchMatchFragment
+import inn.mroyek.submission5kade.ui.searchMatch.SearchMatchMatchFragment
+import inn.mroyek.submission5kade.ui.searchTeam.SearchTeamFragment
 import kotlinx.android.synthetic.main.activity_main_menu_bottom.*
 
 class MainMenuBottomActivity : AppCompatActivity() {
@@ -23,12 +24,16 @@ class MainMenuBottomActivity : AppCompatActivity() {
                     loadingFragment(LeaguesFootballFragment(), "League Fragment")
                     return@setNavigationChangeListener
                 }
-                /*R.id.c_item_search -> {
-                    loadingFragment(SearchMatchFragment(), "Search Fragment")
-                    return@setNavigationChangeListener
-                }*/
                 R.id.c_item_match -> {
                     loadingFragment(FavoriteMatchFragment(), "Favorite Fragment")
+                    return@setNavigationChangeListener
+                }
+                R.id.c_item_search -> {
+                    loadingFragment(SearchMatchMatchFragment(), "Search Match")
+                    return@setNavigationChangeListener
+                }
+                R.id.c_item_search_team -> {
+                    loadingFragment(SearchTeamFragment(), "Search Team")
                     return@setNavigationChangeListener
                 }
             }

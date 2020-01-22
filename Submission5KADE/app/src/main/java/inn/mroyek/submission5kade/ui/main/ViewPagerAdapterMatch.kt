@@ -6,6 +6,7 @@ import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
 import inn.mroyek.submission5kade.ui.match.NextMatchFragment
 import inn.mroyek.submission5kade.ui.match.PrevMatchFragment
+import inn.mroyek.submission5kade.ui.standings.StandingFragment
 import inn.mroyek.submission5kade.ui.team.AllTeamsFragment
 
 
@@ -19,19 +20,21 @@ class ViewPagerAdapterMatch(
         return when (position) {
             0 -> PrevMatchFragment(bundle)
             1 -> NextMatchFragment(bundle)
-            else -> AllTeamsFragment(bundle)
+            2 -> AllTeamsFragment(bundle)
+            else -> StandingFragment(bundle)
         }
     }
 
     override fun getCount(): Int {
-        return 3
+        return 4
     }
 
     override fun getPageTitle(position: Int): CharSequence? {
         return when (position) {
             0 -> "Previous Match"
             1 -> "Next Match"
-            else -> "Teams"
+            2 -> "Teams"
+            else -> "Standing"
         }
     }
 

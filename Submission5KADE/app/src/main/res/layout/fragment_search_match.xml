@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:layout_margin="5dp"
     android:orientation="vertical"
-    tools:context="inn.mroyek.submission5kade.ui.search.SearchMatchFragment">
+    tools:context="inn.mroyek.submission5kade.ui.searchMatch.SearchMatchMatchFragment">
 
     <androidx.appcompat.widget.SearchView
         android:id="@+id/sv_match"

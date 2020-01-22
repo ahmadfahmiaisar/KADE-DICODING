@@ -1,4 +1,4 @@
-package inn.mroyek.submission5kade.ui.search
+package inn.mroyek.submission5kade.ui.searchMatch
 
 import inn.mroyek.submission5kade.base.BasePresenter
 import inn.mroyek.submission5kade.network.ApiRepository
@@ -10,7 +10,7 @@ class SearchMatchPresenter(
     private val repository: ApiRepository,
     private val backgroundScheduler: Scheduler = Schedulers.io(),
     private val mainScheduler: Scheduler = AndroidSchedulers.mainThread()
-) : BasePresenter<SearchContract>() {
+) : BasePresenter<SearchMatchContract>() {
     fun getSearchMatch(query: String) {
         disposable.add(
             repository.getSearchMatch(query)

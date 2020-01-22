@@ -1,4 +1,4 @@
-package inn.mroyek.submission5kade.ui.search
+package inn.mroyek.submission5kade.ui.searchMatch
 
 import com.xwray.groupie.kotlinandroidextensions.GroupieViewHolder
 import com.xwray.groupie.kotlinandroidextensions.Item

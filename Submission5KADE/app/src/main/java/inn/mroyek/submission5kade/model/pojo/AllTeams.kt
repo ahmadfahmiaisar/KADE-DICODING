@@ -5,6 +5,7 @@ import kotlinx.android.parcel.Parcelize
 
 @Parcelize
 data class AllTeams(
+    val id: Long?,
     val idTeam: String?,
     val strLeague: String?,
     val strTeam: String?,

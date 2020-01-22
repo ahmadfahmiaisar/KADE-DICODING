@@ -1,6 +1,8 @@
 package inn.mroyek.submission5kade.ui.detailteams
 
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import inn.mroyek.submission5kade.R
 import inn.mroyek.submission5kade.common.Constants
@@ -15,6 +17,7 @@ class DetailTeamsActivity : AppCompatActivity(), DetailTeamsContract {
 
     private val presenter = DetailTeamsPresenter(ApiRepository())
     private var team: AllTeams? = null
+    private var itemMenu: Menu? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail_teams)
@@ -39,8 +42,54 @@ class DetailTeamsActivity : AppCompatActivity(), DetailTeamsContract {
         iv_logo_detailTeam.loadImageStr(team?.strTeamLogo)
     }
 
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        this.itemMenu = menu
+        team?.idTeam?.let {
+            presenter.checkExistTeam(it)
+        }
+        return super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            android.R.id.home -> finish()
+            R.id.menu_add_favorite -> {
+                team?.let {
+                    presenter.addFavoriteTeam(it)
+                }
+            }
+            R.id.menu_rem_favorite -> {
+                team?.idTeam?.let {
+                    presenter.removeFavoriteTeam(it)
+                }
+            }
+        }
+        return super.onOptionsItemSelected(item)
+    }
+
+    override fun saveFavorite() {
+        itemMenu?.clear()
+        menuInflater.inflate(R.menu.rem_favorite, itemMenu)
+        toastLong("tambahkan ke favorite")
+    }
+
+    override fun removeFavorite() {
+        itemMenu?.clear()
+        menuInflater.inflate(R.menu.add_favorite, itemMenu)
+        toastLong("hapus dari favorite")
+    }
+
+    override fun saveExisFavorite(saved: Boolean) {
+        val intMenu = if (saved) R.menu.rem_favorite else R.menu.add_favorite
+        menuInflater.inflate(intMenu, itemMenu)
+    }
 
     override fun onFail(msg: String) {
         toastLong(msg)
+    }
+
+    override fun onDestroy() {
+        presenter.unBind()
+        super.onDestroy()
     }
 }

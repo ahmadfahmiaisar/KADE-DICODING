@@ -1,4 +1,4 @@
-package inn.mroyek.submission5kade.ui.search
+package inn.mroyek.submission5kade.ui.searchMatch
 
 
 import android.os.Bundle
@@ -13,24 +13,20 @@ import com.xwray.groupie.kotlinandroidextensions.GroupieViewHolder
 import inn.mroyek.submission5kade.R
 import inn.mroyek.submission5kade.common.Constants
 import inn.mroyek.submission5kade.model.pojo.Search
-import inn.mroyek.submission5kade.model.response.SearchMatchResponse
 import inn.mroyek.submission5kade.network.ApiRepository
 import inn.mroyek.submission5kade.ui.detailmatch.DetailMatchActivity
 import kotlinx.android.synthetic.main.fragment_search_match.*
-import org.jetbrains.anko.support.v4.longToast
 import org.jetbrains.anko.support.v4.startActivity
 
 
 /**
  * A simple [Fragment] subclass.
  */
-class SearchMatchFragment : Fragment(), SearchContract, SearchView.OnQueryTextListener,
+class SearchMatchMatchFragment : Fragment(), SearchMatchContract,
     androidx.appcompat.widget.SearchView.OnQueryTextListener {
     private var presenter = SearchMatchPresenter(ApiRepository())
     private val searchAdapter = GroupAdapter<GroupieViewHolder>()
     private var strQuery: String = ""
-    private var filtered: Search? = null
-    private var searchResponse: SearchMatchResponse? = null
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -50,8 +46,11 @@ class SearchMatchFragment : Fragment(), SearchContract, SearchView.OnQueryTextLi
     override fun showMatch(listMacth: MutableList<Search>) {
         searchAdapter.clear()
         listMacth.forEach {
-            searchAdapter.add(SearchMatchAdapter(it){
-                startActivity<DetailMatchActivity>(Constants.MATCH_SEARCH to it, Constants.KEY to "match_search")
+            searchAdapter.add(SearchMatchAdapter(it) {
+                startActivity<DetailMatchActivity>(
+                    Constants.MATCH_SEARCH to it,
+                    Constants.KEY to "match_search"
+                )
             })
         }
     }

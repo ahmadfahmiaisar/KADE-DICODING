@@ -1,8 +1,8 @@
-package inn.mroyek.submission5kade.ui.search
+package inn.mroyek.submission5kade.ui.searchMatch
 
 import inn.mroyek.submission5kade.base.BaseServiceCallBack
 import inn.mroyek.submission5kade.model.pojo.Search
 
-interface SearchContract : BaseServiceCallBack {
+interface SearchMatchContract : BaseServiceCallBack {
     fun showMatch(listMacth: MutableList<Search>)
 }

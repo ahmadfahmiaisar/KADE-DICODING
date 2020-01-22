@@ -2,15 +2,15 @@ package inn.mroyek.submission5kade.db
 
 import inn.mroyek.submission5kade.model.pojo.Matchs
 
-data class FavoriteEntity(val id: Long?,
-                          val idMatch: String?,
-                          val idHomeTeam: String?,
-                          val idAwayTeam: String?,
-                          val nameHomeTeam: String?,
-                          val nameAwayTeam: String?,
-                          val scoreHome: String?,
-                          val scoreAway: String?,
-                          val dateMatch: String?){
+data class FavoriteMatchEntity(val id: Long?,
+                               val idMatch: String?,
+                               val idHomeTeam: String?,
+                               val idAwayTeam: String?,
+                               val nameHomeTeam: String?,
+                               val nameAwayTeam: String?,
+                               val scoreHome: String?,
+                               val scoreAway: String?,
+                               val dateMatch: String?){
     companion object {
         const val TABLE_FAV: String = "TABLE_FAVORITE"
         const val ID: String = "ID_"

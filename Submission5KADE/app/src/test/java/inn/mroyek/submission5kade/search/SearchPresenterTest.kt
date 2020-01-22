@@ -2,8 +2,8 @@ package inn.mroyek.submission5kade.search
 
 import inn.mroyek.submission5kade.model.pojo.Search
 import inn.mroyek.submission5kade.network.ApiRepository
-import inn.mroyek.submission5kade.ui.search.SearchContract
-import inn.mroyek.submission5kade.ui.search.SearchMatchPresenter
+import inn.mroyek.submission5kade.ui.searchMatch.SearchMatchContract
+import inn.mroyek.submission5kade.ui.searchMatch.SearchMatchPresenter
 import io.reactivex.Single
 import io.reactivex.schedulers.TestScheduler
 import org.junit.Before
@@ -18,7 +18,7 @@ class SearchPresenterTest {
     @Mock
     lateinit var repository: ApiRepository
     @Mock
-    lateinit var callBack: SearchContract
+    lateinit var callBack: SearchMatchContract
     private lateinit var presenter: SearchMatchPresenter
 
     @Before

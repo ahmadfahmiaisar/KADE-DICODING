@@ -117,6 +117,7 @@ data class Team(
 ) : Parcelable {
     fun transformTeam(): AllTeams {
         return AllTeams(
+            id = null,
             idTeam = this.idTeam,
             strTeam = this.strTeam,
             strLeague = this.strLeague,

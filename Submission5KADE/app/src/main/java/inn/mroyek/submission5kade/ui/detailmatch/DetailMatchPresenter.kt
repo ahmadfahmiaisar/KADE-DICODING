@@ -3,7 +3,7 @@ package inn.mroyek.submission5kade.ui.detailmatch
 import android.database.sqlite.SQLiteConstraintException
 import inn.mroyek.submission5kade.base.BasePresenter
 import inn.mroyek.submission5kade.base.DbApplication
-import inn.mroyek.submission5kade.db.FavoriteEntity
+import inn.mroyek.submission5kade.db.FavoriteMatchEntity
 import inn.mroyek.submission5kade.model.pojo.Matchs
 import inn.mroyek.submission5kade.network.ApiRepository
 import io.reactivex.Scheduler
@@ -63,15 +63,15 @@ class DetailMatchPresenter(
         try {
             DbApplication.database?.use {
                 insert(
-                    FavoriteEntity.TABLE_FAV,
-                    FavoriteEntity.ID_MATCH to match.eventId,
-                    FavoriteEntity.ID_HOME_TEAM to match.homeTeamId,
-                    FavoriteEntity.ID_AWAY_TEAM to match.awayTeamId,
-                    FavoriteEntity.NAME_HOME_TEAM to match.homeTeamName,
-                    FavoriteEntity.NAME_AWAY_TEAM to match.awayTeamName,
-                    FavoriteEntity.SCORE_HOME to match.homeScore,
-                    FavoriteEntity.SCORE_AWAY to match.awayScore,
-                    FavoriteEntity.DATE_MATCH to match.matchDate
+                    FavoriteMatchEntity.TABLE_FAV,
+                    FavoriteMatchEntity.ID_MATCH to match.eventId,
+                    FavoriteMatchEntity.ID_HOME_TEAM to match.homeTeamId,
+                    FavoriteMatchEntity.ID_AWAY_TEAM to match.awayTeamId,
+                    FavoriteMatchEntity.NAME_HOME_TEAM to match.homeTeamName,
+                    FavoriteMatchEntity.NAME_AWAY_TEAM to match.awayTeamName,
+                    FavoriteMatchEntity.SCORE_HOME to match.homeScore,
+                    FavoriteMatchEntity.SCORE_AWAY to match.awayScore,
+                    FavoriteMatchEntity.DATE_MATCH to match.matchDate
                 )
             }
             callback?.saveFavorite()
@@ -84,8 +84,8 @@ class DetailMatchPresenter(
         try {
             DbApplication.database?.use {
                 delete(
-                    FavoriteEntity.TABLE_FAV,
-                    "(${FavoriteEntity.ID_MATCH} = {idMatch})",
+                    FavoriteMatchEntity.TABLE_FAV,
+                    "(${FavoriteMatchEntity.ID_MATCH} = {idMatch})",
                     "idMatch" to idMatch
                 )
             }
@@ -97,10 +97,10 @@ class DetailMatchPresenter(
 
     fun checkExisMatch(idMatch: String) {
         DbApplication.database?.use {
-            val result = select(FavoriteEntity.TABLE_FAV, FavoriteEntity.ID_MATCH)
+            val result = select(FavoriteMatchEntity.TABLE_FAV, FavoriteMatchEntity.ID_MATCH)
                 .whereArgs(
-                    FavoriteEntity.ID_MATCH + " = {${FavoriteEntity.ID_MATCH}}",
-                    FavoriteEntity.ID_MATCH to idMatch
+                    FavoriteMatchEntity.ID_MATCH + " = {${FavoriteMatchEntity.ID_MATCH}}",
+                    FavoriteMatchEntity.ID_MATCH to idMatch
                 )
                 .limit(1)
                 .exec { parseList(classParser<String>()) }
