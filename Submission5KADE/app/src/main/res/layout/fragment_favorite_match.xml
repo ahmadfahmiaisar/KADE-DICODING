@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="inn.mroyek.submission5kade.ui.favorite.FavoriteMatchFragment">
+    tools:context=".presentation.ui.favorite.FavoriteMatchFragment">
 
     <TextView
         android:id="@+id/textView2"

@@ -1,12 +1,16 @@
 package inn.mroyek.submission5kade.network
 
-import inn.mroyek.submission5kade.model.pojo.AllTeams
-import inn.mroyek.submission5kade.model.pojo.Matchs
-import inn.mroyek.submission5kade.model.pojo.Search
-import inn.mroyek.submission5kade.model.response.*
+import inn.mroyek.submission5kade.data.remote.model.DetailLeague
+import inn.mroyek.submission5kade.data.remote.model.MatchModel
+import inn.mroyek.submission5kade.data.remote.model.Table
+import inn.mroyek.submission5kade.data.remote.model.TeamModel
+import inn.mroyek.submission5kade.presentation.model.AllTeams
+import inn.mroyek.submission5kade.presentation.model.Matchs
+import inn.mroyek.submission5kade.presentation.model.Search
 import io.reactivex.Observable
 import io.reactivex.Single
 
+/*
 
 class ApiRepository {
     private val apiService: ApiService by lazy {
@@ -77,3 +81,4 @@ class ApiRepository {
             .map { it.table }
     }
 }
+*/

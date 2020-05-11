@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="inn.mroyek.submission5kade.ui.detailteams.DetailTeamsActivity">
+    tools:context=".presentation.ui.detailteams.DetailTeamsActivity">
 
     <ImageView
         android:id="@+id/iv_banner_detailteam"

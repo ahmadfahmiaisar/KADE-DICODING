@@ -1,9 +1,9 @@
 package inn.mroyek.submission5kade.detailLeague
 
-import inn.mroyek.submission5kade.model.response.DetailLeague
+import inn.mroyek.submission5kade.data.remote.model.DetailLeague
 import inn.mroyek.submission5kade.network.ApiRepository
-import inn.mroyek.submission5kade.ui.detailLeagues.DetailLeaguesContract
-import inn.mroyek.submission5kade.ui.detailLeagues.DetailLeaguesPresenter
+import inn.mroyek.submission5kade.presentation.ui.detailLeagues.DetailLeaguesContract
+import inn.mroyek.submission5kade.presentation.ui.detailLeagues.DetailLeaguesPresenter
 import io.reactivex.Observable
 import io.reactivex.schedulers.TestScheduler
 import org.junit.Before
@@ -32,7 +32,7 @@ class DetailLeaguePresenterTest {
         val idLeague = "4328"
         val response: DetailLeague? = null
 
-        presenter.bindCallBack(callBack)
+        presenter.bind(callBack)
 
         `when`(repository.getDetailLeague(idLeague)).thenReturn(Observable.just(listLeague))
         presenter.getDetailLeagues(idLeague)

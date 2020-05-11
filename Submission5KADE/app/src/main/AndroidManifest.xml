@@ -5,19 +5,19 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
-        android:name=".base.DbApplication"
+        android:name=".BaseApp"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        <activity android:name=".ui.detailteams.DetailTeamsActivity"
+        <activity android:name="inn.mroyek.submission5kade.presentation.ui.detailteams.DetailTeamsActivity"
             android:theme="@style/Theme.AppCompat.Light" />
         <activity
-            android:name=".ui.detailmatch.DetailMatchActivity"
+            android:name="inn.mroyek.submission5kade.presentation.ui.detailmatch.DetailMatchActivity"
             android:theme="@style/Theme.AppCompat.Light" />
-        <activity android:name=".ui.main.MainMenuBottomActivity">
+        <activity android:name="inn.mroyek.submission5kade.presentation.ui.main.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <action android:name="android.intent.action.VIEW" />

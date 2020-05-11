@@ -6,6 +6,6 @@
     android:id="@+id/rv_next_match"
     android:orientation="vertical"
     android:layout_margin="5dp"
-    tools:context=".ui.match.NextMatchFragment">
+    tools:context=".presentation.ui.match.NextMatchFragment">
 
 </androidx.recyclerview.widget.RecyclerView>

@@ -1,9 +1,9 @@
 package inn.mroyek.submission5kade.match
 
-import inn.mroyek.submission5kade.model.pojo.Matchs
+import inn.mroyek.submission5kade.presentation.model.Matchs
 import inn.mroyek.submission5kade.network.ApiRepository
-import inn.mroyek.submission5kade.ui.match.MatchContract
-import inn.mroyek.submission5kade.ui.match.MatchPresenter
+import inn.mroyek.submission5kade.presentation.ui.match.MatchContract
+import inn.mroyek.submission5kade.presentation.ui.match.MatchPresenter
 import io.reactivex.Single
 import io.reactivex.schedulers.TestScheduler
 import org.junit.Before
@@ -34,7 +34,7 @@ class NextMatchPresenterTest {
         val typeMatch = "eventsnextleague.php"
         val leagudId = "4335"
 
-        presenter.bindCallBack(callback)
+        presenter.bind(callback)
 
         Mockito.`when`(repository.getMatchs(typeMatch, leagudId))
             .thenReturn(Single.just(listMatch))

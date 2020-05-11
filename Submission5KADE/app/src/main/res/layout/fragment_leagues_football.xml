@@ -6,6 +6,6 @@
     android:layout_height="match_parent"
     tools:listitem="@layout/item_rv_league"
     android:orientation="vertical"
-    tools:context=".ui.leagues.LeaguesFootballFragment">
+    tools:context=".presentation.ui.leagues.LeaguesFootballFragment">
 
 </androidx.recyclerview.widget.RecyclerView>

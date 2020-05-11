@@ -4,6 +4,6 @@
     android:id="@+id/rv_teams"
     android:layout_height="match_parent"
     tools:listitem="@layout/item_rv_teams"
-    tools:context="inn.mroyek.submission5kade.ui.team.AllTeamsFragment">
+    tools:context=".presentation.ui.team.AllTeamsFragment">
 
 </androidx.recyclerview.widget.RecyclerView>

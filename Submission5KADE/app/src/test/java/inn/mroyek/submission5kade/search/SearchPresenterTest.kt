@@ -1,9 +1,9 @@
 package inn.mroyek.submission5kade.search
 
-import inn.mroyek.submission5kade.model.pojo.Search
+import inn.mroyek.submission5kade.presentation.model.Search
 import inn.mroyek.submission5kade.network.ApiRepository
-import inn.mroyek.submission5kade.ui.searchMatch.SearchMatchContract
-import inn.mroyek.submission5kade.ui.searchMatch.SearchMatchPresenter
+import inn.mroyek.submission5kade.presentation.ui.searchMatch.SearchMatchContract
+import inn.mroyek.submission5kade.presentation.ui.searchMatch.SearchMatchPresenter
 import io.reactivex.Single
 import io.reactivex.schedulers.TestScheduler
 import org.junit.Before
@@ -33,7 +33,7 @@ class SearchPresenterTest {
         val listSearch = mutableListOf<Search>()
         val query = ""
 
-        presenter.bindCallBack(callBack)
+        presenter.bind(callBack)
         Mockito.`when`(repository.getSearchMatch(query))
             .thenReturn(Single.just(listSearch))
 

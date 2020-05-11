@@ -10,7 +10,7 @@ import androidx.test.espresso.matcher.ViewMatchers.*
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.rule.ActivityTestRule
 import inn.mroyek.submission5kade.R.id.*
-import inn.mroyek.submission5kade.ui.main.MainMenuBottomActivity
+import inn.mroyek.submission5kade.presentation.ui.main.MainActivity
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -18,7 +18,7 @@ import org.junit.runner.RunWith
 @RunWith(AndroidJUnit4::class)
 class SearchViewTest {
     @Rule
-    @JvmField var activityRule = ActivityTestRule(MainMenuBottomActivity::class.java)
+    @JvmField var activityRule = ActivityTestRule(MainActivity::class.java)
 
     @Test
     fun homeTest(){

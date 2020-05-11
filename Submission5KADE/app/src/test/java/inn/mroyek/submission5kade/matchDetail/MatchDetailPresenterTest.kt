@@ -1,9 +1,9 @@
 package inn.mroyek.submission5kade.matchDetail
 
-import inn.mroyek.submission5kade.model.response.MatchModel
+import inn.mroyek.submission5kade.data.remote.model.MatchModel
 import inn.mroyek.submission5kade.network.ApiRepository
-import inn.mroyek.submission5kade.ui.detailmatch.DetailMatchContract
-import inn.mroyek.submission5kade.ui.detailmatch.DetailMatchPresenter
+import inn.mroyek.submission5kade.presentation.ui.detailmatch.DetailMatchContract
+import inn.mroyek.submission5kade.presentation.ui.detailmatch.DetailMatchPresenter
 import io.reactivex.Observable
 import io.reactivex.schedulers.TestScheduler
 import org.junit.Before
@@ -32,7 +32,7 @@ class MatchDetailPresenterTest {
         val idMatch = "584435"
         val model: MatchModel? = null
 
-        presenter.bindCallBack(callBack)
+        presenter.bind(callBack)
 
         `when`(repository.getDetailMatchs(idMatch)).thenReturn(Observable.just(listMatch))
         presenter.getDetailMatch(idMatch)
@@ -44,7 +44,7 @@ class MatchDetailPresenterTest {
         val exception = Exception()
         val idMatch = "584435"
 
-        presenter.bindCallBack(callBack)
+        presenter.bind(callBack)
         `when`(repository.getDetailMatchs(idMatch)).thenReturn(Observable.error(exception))
         presenter.getDetailMatch(idMatch)
         verify(callBack, never()).onFail("error")

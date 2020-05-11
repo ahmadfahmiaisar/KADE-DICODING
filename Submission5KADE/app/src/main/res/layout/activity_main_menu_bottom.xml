@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".ui.main.MainMenuBottomActivity">
+    tools:context=".presentation.ui.main.MainActivity">
 
     <FrameLayout
         android:id="@+id/frame_layout_mainBottom"
@@ -55,7 +55,7 @@
             app:bt_title="favorite"
             app:bt_titlePadding="@dimen/title_padding" />
 
-        <com.gauravk.bubblenavigation.BubbleToggleView
+  <!--      <com.gauravk.bubblenavigation.BubbleToggleView
             android:id="@+id/c_item_search"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -66,9 +66,9 @@
             app:bt_padding="@dimen/internal_padding"
             app:bt_shape="@drawable/transition_background_drawable"
             app:bt_title="match"
-            app:bt_titlePadding="@dimen/title_padding" />
+            app:bt_titlePadding="@dimen/title_padding" />-->
 
-        <com.gauravk.bubblenavigation.BubbleToggleView
+        <!--<com.gauravk.bubblenavigation.BubbleToggleView
             android:id="@+id/c_item_search_team"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -79,7 +79,7 @@
             app:bt_padding="@dimen/internal_padding"
             app:bt_shape="@drawable/transition_background_drawable"
             app:bt_title="team"
-            app:bt_titlePadding="@dimen/title_padding" />
+            app:bt_titlePadding="@dimen/title_padding" />-->
     </com.gauravk.bubblenavigation.BubbleNavigationConstraintView>
 
 

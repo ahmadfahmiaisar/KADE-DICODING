@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="inn.mroyek.submission5kade.ui.searchTeam.SearchTeamFragment">
+    tools:context=".presentation.ui.searchTeam.SearchTeamFragment">
 
     <androidx.appcompat.widget.SearchView
         android:id="@+id/sv_team"
