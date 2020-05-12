@@ -5,8 +5,10 @@ import dagger.android.ContributesAndroidInjector
 import inn.mroyek.submission5kade.presentation.ui.main.MainActivity
 
 @Module
-abstract class ActivityBuilderModule {
+abstract class ActivityModule {
 
     @ContributesAndroidInjector
     abstract fun mainActivity(): MainActivity
+
+    //TODO belum semua activity terdaftar
 }

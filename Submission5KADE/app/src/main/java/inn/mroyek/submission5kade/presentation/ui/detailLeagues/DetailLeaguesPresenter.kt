@@ -7,7 +7,7 @@ import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 import javax.inject.Inject
 
-class DetailLeaguesPresenter @Inject constructor(val repository: DetailLeagueRepository) :
+class DetailLeaguesPresenter @Inject constructor(private val repository: DetailLeagueRepository) :
     BasePresenter<DetailLeaguesContract>() {
 
     fun getDetailLeagues(idLeague: String) {

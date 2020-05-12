@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.xwray.groupie.GroupAdapter
 import com.xwray.groupie.GroupieViewHolder
+import dagger.android.support.DaggerFragment
 import inn.mroyek.submission5kade.R
 import inn.mroyek.submission5kade.common.Constants
 import inn.mroyek.submission5kade.presentation.model.AllTeams
@@ -22,7 +23,7 @@ import javax.inject.Inject
 /**
  * A simple [Fragment] subclass.
  */
-class AllTeamsFragment(bundle: Bundle?) : Fragment(), AllTeamsContract {
+class AllTeamsFragment(bundle: Bundle?) : DaggerFragment(), AllTeamsContract {
 //    private val presenter = AllTeamsPresenter(ApiRepository())
     @Inject
     lateinit var presenter : AllTeamsPresenter

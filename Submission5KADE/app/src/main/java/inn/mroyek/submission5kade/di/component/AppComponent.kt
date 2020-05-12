@@ -5,10 +5,7 @@ import dagger.BindsInstance
 import dagger.Component
 import dagger.android.support.AndroidSupportInjectionModule
 import inn.mroyek.submission5kade.BaseApp
-import inn.mroyek.submission5kade.di.module.ActivityBuilderModule
-import inn.mroyek.submission5kade.di.module.AppModule
-import inn.mroyek.submission5kade.di.module.NetworkModule
-import inn.mroyek.submission5kade.di.module.RepositoryModule
+import inn.mroyek.submission5kade.di.module.*
 import inn.mroyek.submission5kade.presentation.ui.main.MainMatchFootballFragment
 import javax.inject.Singleton
 
@@ -18,9 +15,11 @@ import javax.inject.Singleton
         AndroidSupportInjectionModule::class,
         AppModule::class,
         NetworkModule::class,
-        ActivityBuilderModule::class,
-        RepositoryModule::class
-    ])
+        ActivityModule::class,
+        RepositoryModule::class,
+        FragmentModule::class
+    ]
+)
 
 interface AppComponent {
 
@@ -34,5 +33,5 @@ interface AppComponent {
     }
 
     fun inject(baseApp: BaseApp)
-//    fun inject(mainBot: MainMatchFootballFragment)
+    fun inject(mainBot: MainMatchFootballFragment)
 }

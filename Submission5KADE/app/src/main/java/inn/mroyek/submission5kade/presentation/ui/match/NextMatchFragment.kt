@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.xwray.groupie.GroupAdapter
 import com.xwray.groupie.kotlinandroidextensions.GroupieViewHolder
+import dagger.android.support.DaggerFragment
 import inn.mroyek.submission5kade.R
 import inn.mroyek.submission5kade.common.Constants
 import inn.mroyek.submission5kade.common.logD
@@ -24,7 +25,7 @@ import javax.inject.Inject
 /**
  * A simple [Fragment] subclass.
  */
-class NextMatchFragment(bundle: Bundle?) : Fragment(), MatchContract {
+class NextMatchFragment(bundle: Bundle?) : DaggerFragment(), MatchContract {
 //    private val presenter = MatchPresenter(ApiRepository())
     @Inject
     lateinit var presenter : MatchPresenter

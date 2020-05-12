@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.xwray.groupie.GroupAdapter
 import com.xwray.groupie.kotlinandroidextensions.GroupieViewHolder
+import dagger.android.support.DaggerFragment
 import inn.mroyek.submission5kade.R
 import inn.mroyek.submission5kade.data.remote.model.Table
 import inn.mroyek.submission5kade.presentation.model.Leagues
@@ -19,7 +20,7 @@ import javax.inject.Inject
 /**
  * A simple [Fragment] subclass.
  */
-class StandingFragment(bundle: Bundle?) : Fragment(), StandingContract {
+class StandingFragment(bundle: Bundle?) : DaggerFragment(), StandingContract {
 //    private val presenter = StandingPresenter(ApiRepository())
     @Inject
     lateinit var presenter : StandingPresenter
