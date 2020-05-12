@@ -6,6 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import dagger.android.AndroidInjection
+import dagger.android.support.DaggerFragment
 import inn.mroyek.submission5kade.BaseApp
 import inn.mroyek.submission5kade.R
 import inn.mroyek.submission5kade.common.Constants
@@ -20,10 +22,10 @@ import kotlinx.android.synthetic.main.fragment_main_match_football.*
 import javax.inject.Inject
 
 
-class MainMatchFootballFragment : Fragment(), DetailLeaguesContract {
-//    private val presenter = DetailLeaguesPresenter(ApiRepository())
+class MainMatchFootballFragment : DaggerFragment(), DetailLeaguesContract {
+    //    private val presenter = DetailLeaguesPresenter(ApiRepository())
     @Inject
-    lateinit var presenter : DetailLeaguesPresenter
+    lateinit var presenter: DetailLeaguesPresenter
 
     private var leagueid: Leagues? = null
     override fun onCreateView(
@@ -31,15 +33,16 @@ class MainMatchFootballFragment : Fragment(), DetailLeaguesContract {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-//        presenter.bind(this)
+//        AndroidInjection.inject(this)
+        presenter.bind(this)
         return inflater.inflate(R.layout.fragment_main_match_football, container, false)
     }
 
-    override fun onAttach(context: Context) {
-        super.onAttach(context)
-        presenter.bind(this)
-//        (requireActivity() as BaseApp).fragmentInjector .inject(this)
-    }
+    /*   override fun onAttach(context: Context) {
+           super.onAttach(context)
+           presenter.bind(this)
+   //        (requireActivity() as BaseApp).fragmentInjector .inject(this)
+       }*/
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 //        id = intent?.getParcelableExtra(Constants.MATCH_SEARCH)
@@ -58,9 +61,9 @@ class MainMatchFootballFragment : Fragment(), DetailLeaguesContract {
         tab_match.setupWithViewPager(view_page_match)
     }
 
-   /* override fun showProgress(show: Boolean) {
-        progressbar.visibility = if (show) View.VISIBLE else View.GONE
-    }*/
+    /* override fun showProgress(show: Boolean) {
+         progressbar.visibility = if (show) View.VISIBLE else View.GONE
+     }*/
 
     override fun getDetailLeagues(detailLeague: DetailLeague?) {
         tv_title_league_detail.text = detailLeague?.strLeague

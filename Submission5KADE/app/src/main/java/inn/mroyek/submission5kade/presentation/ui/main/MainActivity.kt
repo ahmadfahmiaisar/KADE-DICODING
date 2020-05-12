@@ -1,18 +1,18 @@
-package inn.mroyek.submission5kade.ui.main
+package inn.mroyek.submission5kade.presentation.ui.main
 
 import inn.mroyek.submission5kade.R
-import inn.mroyek.submission5kade.ui.leagues.LeaguesFootballFragment
+import inn.mroyek.submission5kade.presentation.ui.leagues.LeaguesFootballFragment
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
-import inn.mroyek.submission5kade.ui.favorite.FavoriteMatchFragment
-import inn.mroyek.submission5kade.ui.searchMatch.SearchMatchMatchFragment
-import inn.mroyek.submission5kade.ui.searchTeam.SearchTeamFragment
+import dagger.android.AndroidInjection
+import inn.mroyek.submission5kade.presentation.ui.favorite.FavoriteMatchFragment
 import kotlinx.android.synthetic.main.activity_main_menu_bottom.*
 
-class MainMenuBottomActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        AndroidInjection.inject(this)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main_menu_bottom)
         if (savedInstanceState == null) {
@@ -28,14 +28,14 @@ class MainMenuBottomActivity : AppCompatActivity() {
                     loadingFragment(FavoriteMatchFragment(), "Favorite Fragment")
                     return@setNavigationChangeListener
                 }
-                R.id.c_item_search -> {
+           /*     R.id.c_item_search -> {
                     loadingFragment(SearchMatchMatchFragment(), "Search Match")
                     return@setNavigationChangeListener
                 }
                 R.id.c_item_search_team -> {
                     loadingFragment(SearchTeamFragment(), "Search Team")
                     return@setNavigationChangeListener
-                }
+                }*/
             }
         }
     }
